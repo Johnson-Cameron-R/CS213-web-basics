@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(51, 50, 50);
+}
+
+div {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  color: white;
+}
+
+canvas {
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+}
