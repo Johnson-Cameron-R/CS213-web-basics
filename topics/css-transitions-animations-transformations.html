@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/css-js.css" />
+    <title>CSS Transitions and Animations</title>
+  </head>
+  <body>
+    <nav id="navMenu"></nav>
+    <h2>CSS Transitions and Animations with JS</h2>
+    <div id="box">Change Me!</div>
+    <h2>Change the Color</h2>
+    <div class="bg">
+        <input
+          type="button"
+          class="button"
+          value="Red"
+          onclick="changeBackground(this.value)"
+        />
+        <input
+          type="button"
+          class="button"
+          value="Black"
+          onclick="changeBackground(this.value)"
+        />
+        <input
+          type="button"
+          class="button"
+          value="Yellow"
+          onclick="changeBackground(this.value)"
+        />
+        <input
+          type="button"
+          class="button"
+          value="Orange"
+          onclick="changeBackground(this.value)"
+        />
+        <input
+          type="button"
+          class="button"
+          value="Blue"
+          onclick="changeBackground(this.value)"
+        />
+      </div>
+      <h2>Fade Out & In</h2>
+      <div class="bg">
+        <input
+          type="button"
+          class="button"
+          value="Fade Out"
+          onclick="fadeOut()"
+        />
+        <input
+          type="button"
+          class="button"
+          value="Fade In"
+          onclick="fadeIn()"
+        />
+      </div>
+    </div>
+    <br />
+    <hr />
+    <h2>Open & Close the Box</h2>
+    <div id="box1">Change Me!</div>
+    <br />
+    <div class="bg">
+      <input
+        type="button"
+        class="button"
+        value="Slide Closed"
+        onclick="slideClose()"
+      />
+      <input
+        type="button"
+        class="button"
+        value="Slide Open"
+        onclick="slideOpen()"
+      />
+    </div><br><hr>
+    <h2>Slide the Box</h2>
+    <div class="bg">
+      <div>
+        <input
+          type="button"
+          class="button"
+          value="Slide In"
+          onclick="slideIn()"
+        />
+        <input
+          type="button"
+          class="button"
+          value="Slide Out"
+          onclick="slideOut()"
+        />
+      </div>
+      <figure>
+        <img id="box2" src="../image/mountains.jpg" alt="Mountains" title="Mountains" />
+      </figure>
+
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/css-js.js"></script>
+  </body>
+</html>

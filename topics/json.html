@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <title>JSON</title>
+  </head>
+
+  <body>
+    <nav id="navMenu"></nav>
+    <h2>JSON</h2>
+
+    <div>
+      <h3>Here is the employee database in JSON format</h3>
+      <p id="json-format"></p>
+    </div>
+
+    <div>
+      <p>
+        Choose a number between 1-8 to find an employee. Once you press submit,
+        the JSON will be converted to a Javascript object and your result will
+        be displayed.
+      </p>
+      <input type="text" placeholder="1-8" id="response" name="response" />
+      <button type="button" onclick="exampleJSONParse()">Submit</button>
+      <p id="result1"></p>
+    </div>
+    <hr />
+
+    <div>
+      <h3>Javascript object converted to JSON then displayed</h3>
+      <button type="button" onclick="exampleJSONstringify()">Try It</button>
+      <p id="result2"></p>
+    </div>
+
+    <!-- Receiving Data -- JSON to JavaScript Object
+    using parse -->
+    <script>
+      const employees =
+        '{"employees":[' +
+        '{"firstName":"Jimmy","lastName":"Gardener","age":45, "role":"janitor" },' +
+        '{"firstName":"Bob","lastName":"Flatt", "age":34, "role":"chef" },' +
+        '{"firstName":"Ned","lastName":"Schneebly", "age":22, "role":"waiter" },' +
+        '{"firstName":"Anna","lastName":"Smith", "age":29, "role":"manger" },' +
+        '{"firstName":"John","lastName":"Sharp", "age":25, "role":"cook" },' +
+        '{"firstName":"Quinn","lastName":"Lowry", "age":17, "role":"cashier" },' +
+        '{"firstName":"Joseph","lastName":"Clark", "age":19, "role":"waiter" },' +
+        '{"firstName":"Peter","lastName":"Jones", "age":31, "role":"cashier" }]}';
+
+      let obj = JSON.parse(employees);
+      console.log(obj);
+
+      const exampleJSONParse = () => {
+        let num = document.getElementById("response").value;
+        document.getElementById("result1").innerHTML =
+          "Name: " +
+          obj.employees[num - 1].firstName +
+          " " +
+          obj.employees[num - 1].lastName +
+          "<br>Age: " +
+          obj.employees[num - 1].age +
+          "<br> Job: " +
+          obj.employees[num - 1].role;
+      };
+
+      document.getElementById("json-format").innerHTML = employees;
+    </script>
+
+    <!-- Sending Data -- JavaScript Object to JSON
+    using Stringify -->
+    <script>
+      const exampleJSONstringify = () => {
+        const bigObject = {
+          glossary: {
+            title: "example glossary",
+            GlossDiv: {
+              title: "S",
+              GlossList: {
+                GlossEntry: {
+                  ID: "SGML",
+                  SortAs: "SGML",
+                  GlossTerm: "Standard Generalized Markup Language",
+                  Acronym: "SGML",
+                  Abbrev: "ISO 8879:1986",
+                  GlossDef: {
+                    para:
+                      "A meta-markup language, used to create markup languages sugh as DocBook.",
+                    GlossSeeAlso: ["GML", "XML"]
+                  },
+                  GlossSee: "markup"
+                }
+              }
+            }
+          }
+        };
+
+        let stringifyTest = JSON.stringify(bigObject);
+        document.getElementById("result2").innerHTML = stringifyTest;
+      };
+    </script>
+
+    <script src="../scripts/index.js"></script>
+  </body>
+</html>

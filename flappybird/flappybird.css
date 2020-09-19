@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(51, 50, 50);
+  overflow: hidden;
+}
+
+div {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  color: white;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+#game-window {
+  margin-top: 10px;
+}

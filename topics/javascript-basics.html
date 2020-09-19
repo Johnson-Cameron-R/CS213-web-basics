@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <title>Javascript Basics</title>
+  </head>
+  <body>
+    <nav id="navMenu"></nav>
+    <h2>Loop and functions</h2>
+
+    <p>
+      This for loop example will iterate through an array of fruits and display
+      them in a list.
+    </p>
+    <button class="button" onclick="forLoopExample()">
+      Try out a for loop!
+    </button>
+    <p id="for-loop"></p>
+    <hr />
+    <p>
+      This for-in loop iterates through a student object. It returns each
+      property on a new line.
+    </p>
+    <button class="button" onclick="forInLoopExample()">
+      Try out a for-in loop!
+    </button>
+    <p id="for-in-loop"></p>
+    <hr />
+
+    <p>
+      This button will execute a while loop that continues as long as i is less
+      than 15.
+    </p>
+    <button class="button" onclick="whileLoopExample()">
+      Try out a while loop!
+    </button>
+    <p id="while-loop"></p>
+    <hr />
+
+    <p>
+      This do-while loop calculates the sum of the numbers 1 through 50.
+    </p>
+    <button class="button" onclick="doWhileLoopExample()">
+      Try out a do-while loop!
+    </button>
+    <p id="do-while-loop"></p>
+    <hr />
+
+    <h2>Switch/Conditional</h2>
+    <div>
+      <p>What grade would you like to get this semester?</p>
+      <input type="text" placeholder="0-100" id="response" name="response" />
+      <button class="button" type="button" onclick="switchExample()">
+        Enter Answer
+      </button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      const forLoopExample = () => {
+        let fruits = [
+          "Banana",
+          "Orange",
+          "Apple",
+          "Mango",
+          "Strawberry",
+          "Blueberry"
+        ];
+        let text = "<ul>";
+        for (let i = 0; i <= fruits.length; i++) {
+          text += "<li>" + fruits[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("for-loop").innerHTML = text;
+      };
+
+      const forInLoopExample = () => {
+        const student = { name: "Joe", age: 25, degree: "Bachelors" };
+        let example = "";
+        for (let i in student) {
+          example = example + student[i] + "</br>";
+          document.getElementById("for-in-loop").innerHTML = example;
+        }
+      };
+
+      const whileLoopExample = () => {
+        let text = "";
+        let i = 10;
+        while (i < 15) {
+          text += "The number is " + i + "</br>";
+          i++;
+        }
+        document.getElementById("while-loop").innerHTML = text;
+      };
+
+      const doWhileLoopExample = () => {
+        let sum = 0;
+        let number = 1;
+        do {
+          sum += number;
+          number++;
+        } while (number <= 50);
+        document.getElementById("do-while-loop").innerHTML = "Sum = " + sum;
+      };
+
+      const switchExample = () => {
+        let message = "";
+        let grade = document.getElementById("response").value;
+        console.log(grade);
+        switch (true) {
+          case grade > 100:
+            message = "That's quite ambitious...good luck with that one...";
+            break;
+          case grade >= 90:
+            message = "That's a great goal! Keep up the hard work!";
+            break;
+          case grade >= 80:
+            message = "A good goal...but why not shoot for an A?";
+            break;
+          case grade >= 70:
+            message = "I guess that's passing... but not by much!";
+            break;
+          case grade >= 0:
+            message =
+              "You must be messing with me....Why would you want that??";
+            break;
+          default:
+            message =
+              "Looks like you didn't enter a valid grade...How could you...";
+            break;
+        }
+        document.getElementById("result").innerHTML = message;
+      };
+    </script>
+    <script src="../scripts/index.js"></script>
+  </body>
+</html>

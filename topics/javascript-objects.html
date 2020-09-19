@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <title>JavaScript Objects</title>
+  </head>
+  <body>
+    <nav id="navMenu"></nav>
+    <div class="wrapper" style="background-color: rgb(153, 153, 245);">
+      <h2>
+        JavaScript Objects
+      </h2>
+      <p>
+        This example is done in the console. Right click on this window and
+        select inspect or press CTRL-Shift-I on PC
+      </p>
+    </div>
+    <script src="../scripts/index.js"></script>
+
+    <script>
+      let person = {
+        firstName: "Cameron",
+        lastName: "Johnson",
+        age: 25,
+        hairColor: "blonde",
+        city: "Fayetteville",
+        state: "Arkansas",
+        country: "USA",
+        zip: 727203,
+        fullName: function() {
+          return this.firstName + " " + this.lastName;
+        },
+        contactInfo: function() {
+          return (
+            this.city + ", " + this.state + " " + this.zip + " " + this.country
+          );
+        }
+      };
+
+      console.log("First Name: " + person.firstName);
+      console.log("Last Name: " + person.lastName);
+      console.log("Age: " + person["age"]);
+      console.log("Hair Color: " + person["hairColor"]);
+
+      console.log("Full Name: " + person.fullName());
+      console.log("Contact Info: " + person.contactInfo());
+    </script>
+
+    <script>
+      // syntatcical sugar because I prefer it
+      class Car {
+        constructor(year, make, model) {
+          this.make = make;
+          this.model = model;
+          this.year = year;
+          this.car = year + " " + make + " " + model;
+        }
+      }
+
+      let myCar = new Car("2007", "volkswagen", "passat");
+      let coolCar = new Car("2019", "volkswagen", "GTI");
+
+      console.log("My car: " + myCar.car);
+      console.log("Cool car: " + coolCar.car);
+
+      myCar.color = "silver";
+      coolCar.color = "black";
+
+      console.log("My car's color: " + myCar.color);
+      console.log("Cool car's color: " + coolCar.color);
+    </script>
+  </body>
+</html>

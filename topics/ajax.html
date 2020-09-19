@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../css/normalize.css" /> -->
+    <title>Ajax example</title>
+  </head>
+  <body>
+    <nav id="navMenu"></nav>
+    <h2>Ajax request to API</h2>
+    <p>Press the button to get Nasa's picture of the day!</p>
+    <button class="button" id="nasaPic" onclick="ajaxDemo()">Try Me!</button>
+    <div id="nasaResponse"></div>
+
+    <script src="../scripts/index.js"></script>
+    <script>
+      function ajaxDemo() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            let nasaResponse = JSON.parse(this.responseText);
+            formatResponse(nasaResponse);
+          }
+        };
+        xhttp.open(
+          "GET",
+          "https://api.nasa.gov/planetary/apod?api_key=vqfnQyUrDYsxLR0514kgsRMBK6Vd64XxLAmAWmRw",
+          true
+        );
+        xhttp.send();
+      }
+
+      function formatResponse(response) {
+        let reply =
+          "<h1>" +
+          response.title +
+          "</h1>" +
+          '<img src="' +
+          response.url +
+          '">' +
+          "<p>" +
+          response.explanation +
+          "</p>";
+        document.getElementById("nasaResponse").innerHTML = reply;
+      }
+    </script>
+  </body>
+</html>

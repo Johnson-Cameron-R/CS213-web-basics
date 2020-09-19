@@ -1,0 +1,52 @@
+{
+    "employees": [
+        {
+            "firstName": "Jimmy",
+            "lastName": "Gardener",
+            "age": 45,
+            "role": "janitor"
+        },
+        {
+            "firstName": "Bob",
+            "lastName": "Flatt",
+            "age": 34,
+            "role": "chef"
+        },
+        {
+            "firstName": "Ned",
+            "lastName": "Schneebly",
+            "age": 22,
+            "role": "waiter"
+        },
+        {
+            "firstName": "Anna",
+            "lastName": "Smith",
+            "age": 29,
+            "role": "manger"
+        },
+        {
+            "firstName": "John",
+            "lastName": "Sharp",
+            "age": 25,
+            "role": "cook"
+        },
+        {
+            "firstName": "Quinn",
+            "lastName": "Lowry",
+            "age": 17,
+            "role": "cashier"
+        },
+        {
+            "firstName": "Joseph",
+            "lastName": "Clark",
+            "age": 19,
+            "role": "waiter"
+        },
+        {
+            "firstName": "Peter",
+            "lastName": "Jones",
+            "age": 31,
+            "role": "cashier"
+        }
+    ]
+}
